@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Eliminar Contacto</title>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-list">
+            <table>
+                <thead >
+                    <tr>
+                        <th>Email</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody id="contact-list"></tbody>
+            </table>
+        </div>
+        <div class="contact-forms">
+            <h2>Eliminar Contacto</h2>
+            <form id="delete-contact-form">
+                <label for="email-delete">Email:</label>
+                <input type="text" id="email-delete"  required
+                placeholder="Email">
+                <button type="submit" class="delete-button">Eliminar</button>
+            </form>
+            <button onclick = "redirectToIndex()" > Regresar</button>
+        </div>
+    </div>
+
+    <script src="static/js/get_delete.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Prueba DOM</H1>
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre">
+    <button value="Saludo" onclick=saludar()>Saludo</button>
+    <script type="text/javascript">
+          function saludar(){
+        var nombre = document.getElementById("nombre").value;
+        alert("Hola " + nombre);
+    } 
+    </script>
+    
+    
+</body>
+</html>

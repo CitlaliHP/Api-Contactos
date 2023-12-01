@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Crear contacto</title>
+</head>
+<body>
+    <div class="main-container">
+        <h2>Crear Contacto</h2>
+        <form id="create-contact-form">
+            <label for="email">Email:</label>
+            <input type="text" id="email" required>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" required>
+            <button type="submit" class="create-button" >Crear</button>
+        </form>
+        <button onclick = "redirectToIndex()" > Regresar</button>
+    </div>
+
+    <script src="static/js/get_create.js"></script>
+</body>
+</html>

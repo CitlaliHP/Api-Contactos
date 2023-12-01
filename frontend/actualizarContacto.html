@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Actualizar contactos</title>
+</head>
+<body>
+    <div class="contact-forms">
+        <h2>Actualizar Contacto</h2>
+        <form id="update-contact-form" onsubmit="event.preventDefault(); updateContact();">
+            <label for="email-actual">Email del contacto a actualizar:</label>
+            <input type="text" id="email-actual" required>
+            <label for="email-update">Nuevo Email:</label>
+            <input type="text" id="email-update" required>
+            <label for="nombre-update">Nuevo nombre:</label>
+            <input type="text" id="nombre-update" required>
+            <label for="telefono-update">Nuevo teléfono:</label>
+            <input type="text" id="telefono-update" required>
+            <button onclick = "redirectToIndex()" > Regresar</button>
+            <button type="submit" class="update-button">Actualizar</button>
+        </form>
+    </div>
+    <script src="static/js/get_update.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Contactos</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Lista de Contactos</h1>
+    </header>
+    <div class="container">
+        <div class="contact-list">
+            <table>
+                <thead >
+                    <tr>
+                        <th>Email</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody id="contact-list"></tbody>
+            </table>
+        </div>
+    <div class="contact-forms">
+        <button onclick = "redirectToCreate()" > Crear nuevo contacto</button>
+        <button onclick = "redirectToBuscar()" > Buscar contacto</button>
+        <button onclick = "redirectToUpdate()" > Actualizar contacto</button>
+        <button onclick = "redirectToDelete()" > Eliminar contacto</button>
+    </div>
+    </div>
+
+    <script>
+
+        function redirectToCreate() {
+            window.location.href = "crearContacto.html";
+        }
+        function redirectToBuscar() {
+            window.location.href = "buscarContacto.html";
+        }
+        function redirectToUpdate() {
+            window.location.href = "actualizarContacto.html";
+        }
+        function redirectToDelete() {
+            window.location.href = "eliminarContacto.html";
+        }
+
+       // Función para obtener los datos de los contactos
+function getContacts() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://localhost:8000/contactos');
+    request.onload = function () {
+        if (request.status === 200) {
+            const data = JSON.parse(request.responseText);
+            createTableRows(data);
+        } else {
+            console.error("Error al obtener los contactos (GET): " +  request.status);
+        }
+    };
+    request.onerror = function () {
+        console.error("Error de conexión (GET)");
+    };
+    request.send();
+}
+
+// Función para crear las filas en la tabla
+function createTableRows(data) {
+    var tableBody = document.getElementById('contact-list');
+    data.forEach(function (contacto) {
+        var row = document.createElement('tr');
+        row.innerHTML = '<td>' + contacto.email + '</td><td>' + contacto.nombre + '</td><td>' + contacto.telefono + '</td>';
+        tableBody.appendChild(row);
+    });
+}
+
+// Llama a la función getContacts cuando la página se carga
+window.onload = getContacts;
+ 
+    </script>
+</body>
+</html>
